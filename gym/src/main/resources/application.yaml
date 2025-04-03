@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: nacos-gym
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        connect-timeout: 5000
+        watch-delay: 30000
+        ip: 127.0.0.1
+        port: 9006
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: InstaPlay
+    password: instaplay123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.14:3306/instaplay_database?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+  redis:
+    host: 192.168.31.14
+    port: 16379
+    password: wuliaoqiang
+    timeout: 60000
+server:
+  port: 9006
+mybatis-plus:
+  type-aliases-package: ali.gym.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #  开启 SQL 日志
+    map-underscore-to-camel-case: false # 禁止驼峰命名法转换下划线
